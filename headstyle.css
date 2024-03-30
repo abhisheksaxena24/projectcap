@@ -1,0 +1,205 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: auto;
+    
+    box-sizing: border-box;
+    
+    
+   
+    
+}
+
+.container{
+    display: flex;
+    column-gap: 10px;
+    padding: 2px;
+    padding-top: 1%; 
+    
+    
+}
+
+
+
+body {
+    max-width: max-content;
+    justify-content: center;
+   /** align-items: left; **/
+   
+    flex-direction: column;
+    padding-top: 1%;
+    padding-left: 18px;
+    
+}
+.label{
+    
+    
+    width: max-content;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    
+    
+}
+.from label {
+
+    align-items: left;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-style: normal; 
+    font-weight: bold;
+    
+    
+}
+.to label {
+
+    align-items: left;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-style: normal;
+    padding-right: 25px;
+    font-weight: bold;
+    
+}
+
+
+
+.input-group {
+    position: relative;
+    margin: 2px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #000000;
+    
+    padding: 0 5px;
+    font-family: 'Poppins';
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input {
+    width: max-content;
+    height: 40px;
+    font-size: 16px;
+    color: #060606;
+    padding: 0 10px;
+    background: transparent;
+    border: 2px solid #000000;
+    outline: none;
+    font-family: 'Poppins';
+    border-radius: 10px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #ffffff;
+}
+
+.date_time input {
+    width: fit-content;
+    height: 40px;
+    font-size: 16px;
+    color: #060606;
+    padding: 0 4px;
+    background: transparent;
+    border: 2px solid #000000;
+    outline: none;
+    border-radius: 10px;
+    
+}
+
+/** Button **/
+.submit button{
+    font-size: 24px;
+    background-color: #ffffff;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    font-family: sans-serif;
+    
+    border-radius: 10px;
+}
+
+/**
+
+.submit button{
+    font-size: 18px;
+    position: fixed;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-family: 'poppins',sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.submit {
+    
+    text-justify: auto;
+    
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 22px;
+    width: max-content;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.container input[type="date"]{
+    background-color: #ffffff;
+    border-color: #000000;
+    padding: 10px;
+    position: absolute;
+    border-radius: 5px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border: 1.2px solid #000000;
+    display: flex;
+}
+::webkit-calender-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+input[type="date_start"]{
+    background-color: #ffffff;
+    border-color: #000000;
+    padding: 10px;
+    position: absolute;
+    border-radius: 5px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-family: "Roboto Mono",monospace;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border: 1.2px solid #000000;
+    
+}
+::webkit-calender-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+**/
