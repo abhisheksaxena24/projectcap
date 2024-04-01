@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TE Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="final.css" />
+    
+    
+  </head> 
+
+ 
+<body>
+
+    
+        <div class="container_ba" >
+            <div class="left" id="company_name">
+                <label for="" id="te">TE Connectivity</label>
+            
+            </div>
+            <div class="right" id="right_value">
+                <div class="side_banner" id="side_b">
+                    <label for="" id="te">Welcome</label> 
+                   </div>
+       
+                   <div class="wrapper">
+                     <div class="display">
+                     <div id="time" ></div>
+                    </div>
+                 
+                   </div> 
+       
+                   <div class="logout" id="logout_id">
+                     <label for="" id="lg">Logout</label> 
+                    </div>
+            </div>
+        </div>
+
+ 
+
+
+
+<!--
+
+    <div class="container_ba" >
+        <div class="label" id="name">
+            <label for="" id="te">TE Connectivity</label>
+            
+        </div>
+        
+        
+        <div class="side" id="side_info">
+           <div class="side_banner" id="side_b">
+             <label for="" id="te">Welcome</label> 
+            </div>
+
+            <div class="wrapper">
+              <div class="display">
+              <div id="time" ></div>
+             </div>
+          
+            </div> 
+
+            <div class="logout" id="logout_id">
+              <label for="" id="lg">Logout</label> 
+             </div>
+
+        </div>
+    </div>
+-->
+    
+
+    <script>
+      setInterval(()=>{
+        const time = document.querySelector(".display #time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day_night = "AM";
+        if(hours > 12){
+          day_night = "PM";
+          hours = hours - 12;
+        }
+        if(seconds < 10){
+          seconds = "0" + seconds;
+        }
+        if(minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if(hours < 10){
+          hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+      });
+   </script>
+
+<div class="label_option">
+    <div>
+      <label id="Search_text">Search Options</label>
+    </div>
+  </div>
+
+  <div class="container_option" >
+    
+
+    <div class="input-group">
+      <input type="text" required maxlength="15" />
+      <label id="Purchase_order">Purchase order</label>
+    </div>
+    <div class="input-group">
+      <input type="text" required maxlength="15" />
+      <label id="Invoice">Invoice</label>
+    </div>
+
+<!--                            Test                                      -->
+    <div class="label_2">
+      <div class="from">
+        <label id="Search_from">From</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="date" />
+    </div>
+
+    <div class="label_2">
+      <div class="from">
+        <label id="Search_from">From</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="time" />
+    </div>
+  </div>
+
+<!--                            Test                                      -->
+
+  
+  <div class="container_option">
+    <div class="input-group">
+      <input type="text" required maxlength="15" />
+      <label id="ICN_Number">ICN Number</label>
+    </div>
+    <div class="input-group">
+      <input type="text" required maxlength="15" />
+      <label id="Filename">Filename</label>
+    </div>
+
+    <div class="label_2">
+      <div class="to">
+        <label id="Search_to">To</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="date" />
+    </div>
+
+    <div class="label_2">
+      <div class="to">
+        <label id="Search_from">To</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="time" />
+    </div>
+
+  </div>
+
+  <!-- <button class="btn">Button</button> -->
+  
+
+  <div class="container_option">
+      <div class="submit">
+          <button class="btn">Submit</button>
+      </div>
+      
+  </div>
+  
+
+  <div class="label_result">
+    <div>
+      <label id="Search_text">Search Results</label>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div>
+
+    </div>
+    <div class="box box1">
+          <h1>Purchase order</h1>
+    </div>
+    <div class="box box2">
+         <h1>Invoice Number</h1>
+    </div>
+    <div class="box box3">
+          <h1>ICN Number</h1>
+    </div>
+    <div class="box box4">
+          <h1>Filename</h1>
+    </div>
+  </div>
+
+  <footer>
+    
+    <div class="footerBottom">
+        <p>Copyright &copy;2024; Designed by <span class="designer">Abhishek</span></p>
+    </div>
+  </footer>
+
+
+
+</body>
+</html> 
+</body>
+</html>
