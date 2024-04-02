@@ -13,12 +13,15 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     justify-content: center;
     
    
 }
 
+.form_input{
+    margin: auto
+}
 
 .container_ba > div{
 
@@ -29,19 +32,21 @@ body {
 
 .left{
     float:left;
-    font-size: 28px;
+    font-size: 32px;
     font-family: sans-serif;
-    
+    padding-top: 5px;
+    padding-left: 5px;
     font-weight: bold;
     color: black;
-
+    border-color: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 .right{
     float:right;
     font-family: sans-serif;
-    
+    padding-top: 5px;
     font-weight: bold;
     color: black;
+    padding-right: 5px;
 }
 
 div.side_banner{
@@ -165,7 +170,7 @@ div.side_banner{
     
 }
 .from label {
-
+    
     
     align-items: left;
     font-size: 18px;
@@ -227,7 +232,7 @@ div.side_banner{
 .input-group input:valid~label {
     top: 0;
     font-size: 12px;
-    background: #ffffff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
 .date_time input {
@@ -247,9 +252,12 @@ div.side_banner{
 /** Button **/ 
 .submit button{
     font-size: 20px;
-    
+    width: 120px;
+    height: 28px;
     color: black; 
     margin: auto;
+    border-radius: 10px;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     
     /** 
     width: max-content%;
@@ -268,7 +276,7 @@ div.side_banner{
     **/
 }
 .btn:hover, .btn:focus, .btn:active{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
@@ -293,6 +301,19 @@ div.side_banner{
     font-style: normal;
     font-weight: bold;
     margin: auto;
+    
+}
+
+.result-group{
+    
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 40%;
+    border: 3px solid #000000;
+    margin: auto;
+    position: fixed;
+    border-radius: 10px;
     
 }
 /**
@@ -330,7 +351,7 @@ div.side_banner{
     border-radius: 5px;
     display: flex;
     font-size: 8px;
-    padding-bottom: 80px;
+    
     justify-content: space-evenly ;
     
 }
@@ -338,8 +359,8 @@ div.side_banner{
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
-    width: 250px;
-    height: 200px;
+    width: max-content;
+    height: max-content;
     flex-grow: 1;
     font-size: 8px;
     border: 2px solid #000000;
@@ -348,33 +369,36 @@ div.side_banner{
 .box1{
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 300px;
+    
     
     box-shadow: #c9d6ff;
 }
 .box2{
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 300px;
+    
     
 }
 .box3{
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 300px;
+    
     
 }
 .box4{
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 300px;
+    
     
 }
 
 /** footer **/
 .footerBottom{
     
-   
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     color: black;
     font-size: 16px;
