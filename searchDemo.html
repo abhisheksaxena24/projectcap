@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"  />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <title>TE Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'searchDemo.css' %}">
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    
+    
+  </head> 
+
+ 
+<body>
+
+ <div class="absolute">
+    <div class="absolute inset-0 justify-center">
+        <div class="bg-shape1 bg-teal opacity-50 bg-blur"></div>
+        <div class="bg-shape2 bg-primary opacity-50 bg-blur"></div>
+        <div class="bg-shape3 bg-orange opacity-50 bg-blur"></div>
+    </div>
+  </div>  
+
+    
+
+
+        <div class="container_ba" >
+          
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/TE_Connectivity_logo.svg/320px-TE_Connectivity_logo.svg.png" alt="logo" class="logo">
+
+            <div class="left" id="company_name">
+                <label for="" id="te">TE Connectivity</label>           
+            </div>
+
+            <div class="right" id="right_value">
+                <div class="side_banner" id="side_b">
+                    <label for=" " id="te">Welcome</label> 
+                </div>
+       
+                <div class="wrapper">
+                     <div class="display">
+                     <div id="time" >
+
+                     </div>
+                </div>
+                 
+                </div> 
+       
+                 <div class="logout" id="logout_id">
+                     <label for="" id="lg">Logout</label> 
+                  </div> 
+                </div>
+                
+        </div>
+      
+
+    <script>
+      setInterval(()=>{
+        const time = document.querySelector(".display #time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day_night = "AM";
+        if(hours > 12){
+          day_night = "PM";
+          hours = hours - 12;
+        }
+        if(seconds < 10){
+          seconds = "0" + seconds;
+        }
+        if(minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if(hours < 10){
+          hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+      });
+   </script>
+
+<div class="label_option">
+    <div>
+      <label id="Search_text">Search Options</label>
+    </div>
+  </div>
+
+
+  <!-- Form-->
+<form class="form_input" id="form"> 
+<div class="container_option" >
+    <div class="input-group">
+      <input type="search"  name="InvoiceQuery" maxlength="20">
+      <label id="Purchase_order">Invoice</label>
+    </div>
+    <div class="input-group">
+      <input type="search" name="queryIDOC" maxlength="20">
+      <label id="Invoice">IDoc</label>
+    </div>
+
+     <!--                            Test                                      -->
+    <div class="label_2">
+      <div class="from">
+        <label id="Search_from">From</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="date" />
+    </div>
+
+    <div class="label_2">
+      <div class="from">
+        <label id="Search_from">From</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="time" />
+    </div>
+</div>
+
+<!--                            Test                                      -->
+
+
+<div class="container_option">
+    <div class="input-group">
+      <input type="search" name="queryICN" maxlength="20">
+      <label id="ICN_Number">ICN Number</label>
+    </div>
+    <div class="input-group">
+      <input type="search" name="queryPartner" maxlength="20">
+      <label id="Filename">Partner Name</label>
+    </div>
+
+    <div class="label_2">
+      <div class="to">
+        <label id="Search_to">To</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="date" />
+    </div>
+
+    <div class="label_2">
+      <div class="to">
+        <label id="Search_from">To</label>
+      </div>
+    </div>
+
+    <div class="date_time">
+      <input type="time" />
+    </div>
+   
+    
+</div>
+
+  <!-- <button class="btn">Button</button> -->
+<div id="container_submit">
+  <div class="submit">
+    <button class="btn" id="submitbtn">Submit</button>
+  </div>
+</div>
+  
+   
+      
+  
+  </form>
+
+  <div class="label_result">
+    <div>
+      <label id="Search_text">Search Results</label>
+    </div>
+  </div>
+
+  
+  
+  
+
+<section>
+  
+  <div class="flex-container" >
+    
+    <div>
+
+      <div class="result-group" >
+        
+         <table cellpadding="0" cellspacing="0" border="0" id="tbl_exporttable_to_xls">
+          <thead>
+              <tr>
+                  <th>Invoice No.</th>
+                  <th>Control No.</th>
+                  <th>Customer</th>
+                  <th>Sold-To</th>
+                  <th>IDoc No.</th>
+                  <th>Date</th>
+                  <th>Received from SAP</th>
+                  <th>Received Date from SAP</th>
+                  <th>Sent to Customer</th>
+                  <th>Sent Date to Customer</th>
+              </tr>
+          </thead>
+
+          <tbody>
+            {% for data in searchData %}
+            
+            <tr>
+                {% for num in data %}
+                <td>{{ num.invoice }}</td>
+                <td>{{num.control_no}}</td>
+                <td>{{num.partner_name}}</td>
+                <td>{{num.sold_to}}</td>
+                <td>{{num.idoc}}</td>
+                <td>{{num.date}}</td>
+                <td>{{num.received_from_sap}}</td>
+                <td>{{num.received_date_from_sap}}</td>
+                <td>{{num.sent_to_partner}}</td>
+                <td>{{num.sent_date_to_partner}}</td>
+                {% endfor %}
+            </tr>
+            
+            {% endfor %}
+            <!-- Add more rows as needed -->   
+          </tbody>     
+        </table> 
+     </div>
+     
+    </div>
+    
+  </div>
+
+</section> 
+
+
+  <!-- <button class="btn">Button</button> -->
+  <div id="container_submit2">
+    
+    <button class="resultbutton" onclick="fnExportToExcel('xlsx','result')" id="resultbtn">Download Result</button>
+    
+    
+  </div>
+  
+  
+
+  <footer>
+    
+    <div class="footerBottom">
+      
+        <p>Copyright &copy;2024, Developed by <span class="designer">TE Connectivity</span></p>
+        
+    </div>
+  </footer>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+
+  function fnExportToExcel(fileExtension,fileName) {
+    var elt = document.getElementById("tbl_exporttable_to_xls");
+    var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+    return  XLSX.writeFile(wb, fileName+"."+fileExtension || ('MySheetName.' + (fileExtension || 'xlsx')));
+ }
+
+</script>
+
+
+
+  <script>
+    window.onscroll = function() {myFunction()};
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+      } else {
+                header.classList.remove("sticky");
+        }
+      }
+  </script>
+
+  <script>
+    // If the input checkbox is checked, activate dark mode by adding dark-class to the body
+    $('#toggle').change(() => {
+       if ($('#toggle').is(":checked")) {
+          $("body").addClass("dark-class");
+       } else {
+          $("body").removeClass("dark-class")
+       }
+    })
+ </script>
+  
+  
+
+
+</body>
+
+</html>
